@@ -65,3 +65,51 @@ var app7 = new Vue({
         ]
     }
 })
+
+// var vm = new Vue({
+//     data: data
+// });
+
+// vm.a === data.a;
+
+// vm.a = 2;
+// data.a;
+
+// data.a = 3;
+// vm.a;
+
+var vm = new Vue({
+    data: {
+        newTodoText: '',
+        visitCount: 0,
+        hideCompletedTodos: false,
+        todos: [],
+        error: null,
+    }
+});
+
+var obj = {
+    foo: 'bar',
+}
+
+Object.freeze(obj);
+
+var app8 = new Vue({
+    el: '#app-8',
+    data: obj
+})
+
+var data = { a: 1 };
+
+var vm = new Vue({
+    el: '#example',
+    data: data
+});
+
+vm.$data === data; // true
+vm.$el === document.getElementById('example'); // true
+
+// $watch - метод экземпляра
+vm.$watch('a', function(newValue, oldValue) {
+    // Этот коллбэк будет вызван, когда изменится `vm.a`
+})

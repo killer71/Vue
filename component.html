@@ -27,14 +27,40 @@
     </div>
 
 
-
+    <h2>Рефакторинг компонента</h2>
 
     <div id="blog-2">
-        <blog-post
+        <blog-post-2
             v-for="post in posts"
             v-bind:key="post.id"
             v-bind:post="post"
-        ></blog-post>
+        ></blog-post-2>
+    </div>
+
+    <h2>Прослушивание событий в дочерних компонентах</h2>
+
+    <div id="blog-posts-events-demo">
+        <div :style="{ fontSize: postFontSize + 'em' }">
+          <blog-post-3
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:post="post"
+            v-on:enlarge-text="postFontSize += 0.1"
+          ></blog-post-3>
+        </div>
+    </div>
+
+    <h2>Передача данных вместе с событием</h2>
+
+    <div id="blog-4">
+        <div :style="{ fontSize: postFontSize + 'em' }">
+          <blog-post-4
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:post="post"
+            v-on:enlarge-text="onEnlargeText"
+          ></blog-post-4>
+        </div>
     </div>
 
     

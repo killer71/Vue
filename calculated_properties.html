@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Вычисляемые свойства</h2>
+
+    <div id="example">
+        <p>Изначальное сообщение: «{{ message }}»</p>
+        <p>Сообщение задом наперёд: «{{ reversedMessage }}»</p>
+    </div>
+
+    <h2>Кеширование вычисляемых свойств</h2>
+
+    <div id="example-2">
+        <p>Изначальное сообщение: «{{ message }}»</p>
+        <p>Сообщение задом наперёд: «{{ reverseMessage() }}»</p>
+    </div>
+
+    <h2>Вычисляемые свойства и слежение</h2>
+
+    <p>Слежение за свойствами</p>
+
+    <div id="example-3">{{ fullName }}</div>
+
+    <p>Версия с использованием вычисляемого свойства:</p>
+
+    <div id="example-4">{{ fullName }}</div>
+
+    <h2>Сеттеры вычисляемых свойств</h2>
+
+    <div id="example-5">{{ fullName }}</div>
+
+    <h2>Методы-наблюдатели</h2>
+
+    <div id="watch-example">
+        <p>
+          Задайте вопрос, на который можно ответить «да» или «нет»:<br />
+          <input v-model="question">
+        </p>
+        <p>{{ answer }}</p>
+    </div>
+    
+<script src="https://unpkg.com/vue"></script>
+<script src="js/calculated_properties.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+
+</body>
+</html>

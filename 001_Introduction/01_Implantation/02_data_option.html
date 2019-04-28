@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Добавление экземпляра Vue</title>
+    <script src="../../libs/vue/vue.js"></script>
+</head>
+<body>
+
+    <h1>Пример показывающий использование обьекта data</h1>
+    
+    <div id="app">
+
+        <h2>Ссылка на документацию - {{path}}</h2>
+        <!-- Вывод на экран обьекта data -->
+        <h2>Ссылка на документацию - {{$data}}</h2>
+
+        <h2></h2>
+       
+    </div>
+
+    <script>
+
+        window.onload = function() {
+
+            var sample = new Vue({
+                el: "#app",
+                data: {
+                    path: 'vuejs.org',
+                    isOnline: true
+                }
+            })
+
+        };
+
+    </script>
+
+    <style scoped>
+
+        h1 {
+            text-align: center;
+            color: green;
+        }
+
+    </style>
+
+</body>
+</html>

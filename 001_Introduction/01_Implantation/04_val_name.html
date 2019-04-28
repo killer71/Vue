@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <script src="../../libs/vue/vue.js"></script>
+</head>
+<body>
+
+    <h1>Именование переменных</h1>
+    
+    <div id="app">
+        <h2> {{value1}} </h2>
+        <h2> {{Value1}} </h2>
+        <h2> {{$value}} </h2>
+        <h2> {{_value}} </h2>
+    </div>
+    
+    <script>
+
+        window.onload = function() {
+            var sample = new Vue({
+                el: "#app",
+                data: {
+                    value1: "Name",
+                    Value1: "Age",
+                    $value: "$Error",
+                    _value: "_Error"
+                }
+            })
+        };
+
+    </script>
+
+    <style scoped>
+
+        h1 {
+            text-align: center;
+            color: green;
+        }
+  
+    </style>
+
+</body>
+</html>

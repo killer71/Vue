@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <script src="../../libs/vue/vue.js"></script>
+</head>
+<body>
+
+    <h1>Привязка к стилям</h1>
+    
+    <div id="app">
+        <!-- Определение значения цвета элемента через привязку стиля -->
+        <h2 v-text="name" v-bind:style="{color: colorData}"></h2>
+
+        <h2 v-text="name" v-bind:style="{
+            color: colorData,
+            fontSize: fontData,
+            margin: marginData}"></h2>
+
+        <!-- Получение свойства CSS через обьэкт JS -->
+        <h2 v-text="name" v-bind:style="firstStyle"></h2>
+
+        <!-- Получение свойства CSS через массив JS -->
+        <p v-text="name" v-bind:style="[firstStyle, secondStyle]"></p>
+        
+        <!-- Использование сокращенного варианта привязки -->
+        <h2 v-text="name" :style="firstStyle"></h2>
+
+    </div>
+    
+   <script>
+   
+        window.onload = function() {
+
+            var sample = new Vue({
+                el: "#app",
+                data: {
+                    name: "Alex",
+                    colorData: "orange",
+                    marginData: "10px",
+                    fontData: "16px",
+                    firstStyle: {
+                        color: "blue",
+                        textAlign: "center",
+                        border: "2px solid red"
+                    },
+                    secondStyle: {
+                        color: "green",
+                        textAlign: "center",
+                        fontSize: "25px"
+                    }
+                }
+            })
+
+        };
+
+   </script>
+
+    <style scoped>
+
+        h1 {
+            text-align: center;
+            color: green;
+        }
+
+    </style>
+
+</body>
+</html>

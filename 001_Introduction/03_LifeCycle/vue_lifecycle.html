@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <script src="../../libs/vue/vue.js"></script>
+</head>
+<body>
+
+    <h1>Пример жизненного цикла</h1>
+    
+    <div id="app">
+
+        Счетчик количества обновлений: <span>{{ counter }}</span>
+        <br />
+        <button class="btn btn-success" v-on:click="updateClick">Обновить</button>
+        <br />
+        <br />
+
+    </div>
+
+        <button id="destroyClick" class="btn btn-danger">Удалить цикл</button>
+    </div>
+    
+   <script>
+   
+        window.onload = function() {
+
+            var sample = new Vue({
+                el: "#app",
+                data: {
+                    counter: 0
+                },
+                methods: {
+                    updateClick: function () {
+                        this.counter = this.counter + 1;
+                    }
+                },
+                beforeCreate: function () {
+                    console.log('Начало создания');
+                },
+                created: function () {
+                    console.log('Создан экзмепляр');
+                },
+                beforeMount: function () {
+                    console.log('Начало подключения');
+                },
+                mounted: function () {
+                    console.log('Подключение завершено');
+                },
+                beforeUpdate: function () {
+                    console.log('Начало обновления');
+                },
+                updated: function () {
+                    console.log('Обновлен экземпляр');
+                },
+                beforeDestroy: function () {
+                    console.log('Начало удаления');
+                },
+                destroyed: function () {
+                    console.log('Удален экземляр');
+                }
+            });
+
+            document.getElementById('destroyClick').addEventListener('click', function () {
+                sample.$destroy();
+            });
+
+        };
+
+   </script>
+
+    <style scoped>
+
+        h1 {
+            text-align: center;
+            color: green;
+        }
+
+    </style>
+
+</body>
+</html>

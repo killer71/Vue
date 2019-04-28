@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <script src="../../libs/vue/vue.js"></script>
+</head>
+<body>
+
+    <h1>Привязка к CSS классам</h1>
+    
+    <div id="app">
+        <h2 v-text="userName" v-bind:class="[userColor, userSize]"></h2>
+        <h2 v-text="userName" v-bind:class="userStyles"></h2>
+    </div>
+    
+   <script>
+   
+        window.onload = function() {
+
+            var sample = new Vue({
+                el: "#app",
+                data: {
+                    userName: "Ronaldo",
+                    userColor: "color",
+                    userSize: "size",
+                    userStyles: ["color", "size"]
+                }
+            })
+
+        };
+
+   </script>
+
+    <style scoped>
+
+        h1 {
+            text-align: center;
+            color: green;
+        }
+
+        .color {
+            color: #ff6a00;
+            background-color: antiquewhite;
+        }
+
+        .size {
+            font-family: "Verdana";
+            font-size: 18px;
+            margin: 10px;
+        }
+
+    </style>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+    <script src="../../libs/vue/vue.js"></script>
+</head>
+<body>
+
+    <h1>Создание обьэкта data</h1>
+    
+    <div id="app">
+
+        <h2>Список студентов:</h2>
+
+        <ul v-for="student in students">
+            <li>
+                {{student.name}},
+                {{student.age}} лет,
+            </li>
+        </ul>
+
+    </div>
+    
+   <script>
+   
+        window.onload = function() {
+
+            var sample = new Vue({
+                el: "#app",
+                data: {
+                    students: [
+                        {
+                            name: 'Alex',
+                            age: 15
+                        },
+                        {
+                            name: 'Andrew',
+                            age: 20
+                        }
+                    ]
+                }
+            })
+
+        };
+
+   </script>
+
+    <style scoped>
+
+        h1 {
+            text-align: center;
+            color: green;
+        }
+
+    </style>
+
+</body>
+</html>
